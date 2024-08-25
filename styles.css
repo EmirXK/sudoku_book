@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+table.outer-table {
+    width: 100%;
+    table-layout: fixed;
+}
+td.board-cell {
+    vertical-align: top;
+    border-color: white;
+}
+table.inner-table {
+    border-collapse: collapse;
+    margin: 10px auto;
+    border: 4px solid #000;
+    margin-bottom: 65px;
+    padding-bottom: 65px;
+}
+td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #999;
+    text-align: center;
+    font-size: 22px;
+}
+
+.inner_td:nth-child(3), .inner_td:nth-child(6) {
+    border-right-width: 3px;
+}
+
+.inner_tr:nth-child(3) td, .inner_tr:nth-child(6) td {
+    border-bottom-width: 3px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #ddd; /* Adds a separator line */
+    padding-bottom: 30px; /* Space between text and line */
+}
+
+.header-left {
+    float: left;
+    margin-bottom: 40px;
+    font-size: large;
+}
+
+.header-right {
+    float: right;
+    margin-bottom: 40px;
+    font-size: large;
+}
+
+.footer {
+    border-top: 2px solid #ddd; /* Border at the top of the footer */
+    font-size: large;
+    padding-top: 10px; /* Space between the border and the text */
+    text-align: center;
+    color: #333;
+}
