@@ -27,7 +27,7 @@ This project generates a custom Sudoku book in PDF format. The generator creates
     python book_creator.py
     ```
 2. The resulting PDF will be saved in the `puzzles/output` directory.
-3. You can find the solutions at the `solutions/output` directory.
+3. You can find the solutions in the `solutions/output` directory.
 
 ## Contributing
 
