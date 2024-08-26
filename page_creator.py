@@ -12,7 +12,7 @@ def generate_and_save_sudoku_pdf(board1, board2, board3, board4, page, difficult
     html_content = generate_sudoku_board_html(board1, board2, board3, board4, page, difficulty)
     
     # Define path to wkhtmltopdf
-    path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+    path_wkhtmltopdf = 'wkhtmltopdf.exe'
     
     # Configure pdfkit
     config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
@@ -43,5 +43,3 @@ def generate_page(page_num, difficulty):
     # Generate and save the solution page PDF
     solution_file_name = f"solution_page{page_num}.pdf"
     generate_and_save_sudoku_pdf(solution1, solution2, solution3, solution4, page_num, difficulty, solution_directory, solution_file_name)
-
-generate_page(1, 'easy')
