@@ -30,7 +30,11 @@ def sort_properly(my_files):
     return my_files
 
 
-def merge_pdfs(directory_path, output_path):
+def merge_pdfs(directory_path, output_filename):
+    # Create the output directory if it doesn't exist
+    output_dir = os.path.join(directory_path, 'output')
+    os.makedirs(output_dir, exist_ok=True)
+
     # Create a PdfMerger object
     merger = PdfMerger()
 
@@ -43,6 +47,9 @@ def merge_pdfs(directory_path, output_path):
 
         # Append each PDF to the merger
         merger.append(pdf_path)
+
+    # Define the output path
+    output_path = os.path.join(output_dir, output_filename)
 
     # Write out the merged PDF
     with open(output_path, 'wb') as output_file:
@@ -57,11 +64,11 @@ generate_separate_pages()
 
 # merge the pages into a pdf
 puzzles_directory_path = './puzzles'  # Replace with your directory path
-puzzles_output_path = 'puzzles_prototype_2.pdf'  # Replace with your desired output file path
+puzzles_output_path = 'puzzles_book.pdf'  # Replace with your desired output file path
 merge_pdfs(puzzles_directory_path, puzzles_output_path)
 
 
 # merge the solutions into a pdf
 solutions_directory_path = './solutions'  # Replace with your directory path
-solutions_output_path = 'solutions_prototype_2.pdf'  # Replace with your desired output file path
+solutions_output_path = 'solutions_book.pdf'  # Replace with your desired output file path
 merge_pdfs(solutions_directory_path, solutions_output_path)
